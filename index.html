@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLN - CLT - Donsker Simulation</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f4f6f8;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    h1, h2 {
+      color: #1f5a92;
+    }
+
+    button {
+      background: #1f5a92;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    .chart-box {
+      margin-top: 30px;
+      border: 1px solid #dbe4ee;
+      border-radius: 12px;
+      padding: 15px;
+      background: white;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    .formula {
+      background: #eef3f8;
+      padding: 10px;
+      border-left: 4px solid #1f5a92;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Probability Theory and Stochastic Processes</h1>
+
+  <p>
+    Questa applicazione mostra alcune simulazioni numeriche relative alla:
+  </p>
+
+  <ul>
+    <li>Legge dei Grandi Numeri (LLN)</li>
+    <li>Teorema Centrale del Limite (CLT)</li>
+    <li>Principio di Invarianza di Donsker</li>
+  </ul>
+
+  <div class="formula">
+    LLN: la media empirica converge al valore atteso.
+  </div>
+
+  <div class="formula">
+    CLT: la somma normalizzata converge a una distribuzione Normale.
+  </div>
+
+  <div class="formula">
+    Donsker: la Random Walk scalata converge al Moto Browniano.
+  </div>
+
+  <button onclick="simulaLLN()">Simula LLN</button>
+
+  <div class="chart-box">
+    <canvas id="llnChart"></canvas>
+  </div>
+
+  <button onclick="simulaCLT()">Simula CLT</button>
+
+  <div class="chart-box">
+    <canvas id="cltChart"></canvas>
+  </div>
+
+  <button onclick="simulaDonsker()">Simula Donsker</button>
+
+  <div class="chart-box">
+    <canvas id="donskerChart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
